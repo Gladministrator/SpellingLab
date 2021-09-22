@@ -1,0 +1,15 @@
+.lettercontainer {
+  display: flex;
+  :not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.letters {
+  opacity: 0;
+}
+
+.box {
+  width: 20px;
+  border-bottom: 1px solid black;
+}
