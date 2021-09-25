@@ -19,7 +19,7 @@ export interface IPoints {
 }
 
 export interface IQuestionsProps {
-  setCategory: (param: string[]) => void;
+  setWordCategory: (param: ICategory) => void;
   setPlayers: (param: number) => void;
   setPoints: (param: IPoints) => void;
   players: number | undefined;

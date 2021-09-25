@@ -54,7 +54,7 @@ const Buttons = ({ animal, stateElements, setStateElements }: IButtonProps) => {
       </button>
     );
   });
-  return <div>Here are your buttons{alphabutton}</div>;
+  return <div>{alphabutton}</div>;
 };
 
 export default Buttons;

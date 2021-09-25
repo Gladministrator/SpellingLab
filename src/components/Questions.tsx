@@ -2,12 +2,12 @@ import { categories } from "./WordLists";
 import { IQuestionsProps } from "../types/types";
 import { ICategories } from "../types/types";
 
-function Questions({ setCategory, setPlayers, setPoints, players }: IQuestionsProps) {
+function Questions({ setWordCategory, setPlayers, setPoints, players }: IQuestionsProps) {
   function words() {
     let array: JSX.Element[] = [];
     for (let items in categories) {
       array.push(
-        <button onClick={() => setCategory(categories[items as keyof ICategories])} key={items}>
+        <button onClick={() => setWordCategory(categories[items as keyof ICategories])} key={items}>
           {items}
         </button>
       );
@@ -23,6 +23,7 @@ function Questions({ setCategory, setPlayers, setPoints, players }: IQuestionsPr
             <button onClick={() => setPlayers(1)}>1</button>
             <button onClick={() => setPlayers(2)}>2</button>
             <button onClick={() => setPlayers(3)}>3</button>
+            <button onClick={() => setPlayers(4)}>4</button>
           </div>
         </div>
       )}

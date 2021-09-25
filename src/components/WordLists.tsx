@@ -3,9 +3,29 @@ interface ICategories {
   "Game Characters": string[];
 }
 
-export const categoryAnimals: string[] = ["Goose", "Rat", "Moose", "Goat"];
+export const categoryAnimals: string[] = [
+  "Animals",
+  "Goose",
+  "Rat",
+  "Moose",
+  "Goat",
+  "Dolphin",
+  "Crocodile",
+  "Wolf",
+  "Bird",
+];
 
-export const categoryVideoGameCharacter: string[] = ["Mario", "Luigi", "Donkey Kong"];
+export const categoryVideoGameCharacter: string[] = [
+  "Game Characters",
+  "Mario",
+  "Luigi",
+  "Donkey Kong",
+  "Kirby",
+  "Princess Peach",
+  "Lucario",
+  "Pikachu",
+  "Samus",
+];
 
 export const categories: ICategories = {
   Animals: categoryAnimals,
