@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { IPoints, IDivprops, ICategory } from "../../types/types";
 import WordGameSass from "./WordGame.module.scss";
-import classNames from "classnames/bind";
 import Buttons from "./Buttons/Buttons";
 import InputAnswer from "./InputAnswer/InputAnswer";
+import NextQuestion from "./NextQuestion/NextQuestion";
+import classNames from "classnames/bind";
 
 let cx = classNames.bind(WordGameSass);
 
@@ -15,7 +16,8 @@ export interface IGameProps {
 }
 
 const WordGame = ({ points, setPoints, players, wordCategory }: IGameProps) => {
-  const [nextButton, setNextButton] = useState<Boolean>(false);
+  const [incorrectAsnwer, setincorrectAsnwer] = useState<number>(0);
+  const [nextButton, setNextButton] = useState<boolean>(false);
   const [animal, setAnimal] = useState<string>(wordCategory[1]);
   const [stateElements, setStateElements] = useState<IDivprops[]>(
     animal.split("").map((letter, index) => {
@@ -29,32 +31,34 @@ const WordGame = ({ points, setPoints, players, wordCategory }: IGameProps) => {
 
   useEffect(() => {
     if (stateElements.every((div) => div.props.className === undefined)) {
-      setAnimal(wordCategory[wordCategory.indexOf(animal) + 1]);
       setNextButton(true);
+      setAnimal(wordCategory[wordCategory.indexOf(animal) + 1]);
     }
   }, [stateElements]);
-
-  const nextWord = () => {
-    setStateElements(
-      animal.split("").map((item, index) => {
-        return (
-          <div className={cx(WordGameSass.box)} key={index}>
-            <p className={cx(WordGameSass.letters)}>{item}</p>
-          </div>
-        );
-      })
-    );
-    setNextButton(false);
-  };
 
   return (
     <div className={cx("main-container")}>
       <h1>The Category is {wordCategory[0]}</h1>
       <div className={cx("lettercontainer")}>{stateElements}</div>
-      <Buttons animal={animal} stateElements={stateElements} setStateElements={setStateElements} />
-      {nextButton && <button onClick={nextWord}>Next Word</button>}
-      {!nextButton && <button>SKIP:FEATURE NOT AVAILABLE LOLS</button>}
-      <InputAnswer />
+      <Buttons
+        animal={animal}
+        stateElements={stateElements}
+        setStateElements={setStateElements}
+        setincorrectAsnwer={setincorrectAsnwer}
+      />
+      <InputAnswer
+        animal={animal}
+        setStateElements={setStateElements}
+        setincorrectAsnwer={setincorrectAsnwer}
+      />
+      <>Incorrect Tries:{incorrectAsnwer}</>
+      <NextQuestion
+        setStateElements={setStateElements}
+        setincorrectAsnwer={setincorrectAsnwer}
+        animal={animal}
+        setNextButton={setNextButton}
+        nextButton={nextButton}
+      />
     </div>
   );
 };

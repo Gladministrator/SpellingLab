@@ -1,6 +1,6 @@
 import { IButtonProps, IDivprops } from "../../../types/types";
 
-const Buttons = ({ animal, stateElements, setStateElements }: IButtonProps) => {
+const Buttons = ({ animal, stateElements, setStateElements, setincorrectAsnwer }: IButtonProps) => {
   const alphabet = [
     "A",
     "B",
@@ -44,6 +44,8 @@ const Buttons = ({ animal, stateElements, setStateElements }: IButtonProps) => {
         );
       });
       setStateElements(array);
+    } else {
+      setincorrectAsnwer((prev) => prev + 1);
     }
   }
 
