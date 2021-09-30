@@ -32,7 +32,6 @@ const WordGame = ({ points, setPoints, players, wordCategory }: IGameProps) => {
   useEffect(() => {
     if (stateElements.every((div) => div.props.className === undefined)) {
       setNextButton(true);
-      setAnimal(wordCategory[wordCategory.indexOf(animal) + 1]);
     }
   }, [stateElements]);
 
@@ -58,6 +57,8 @@ const WordGame = ({ points, setPoints, players, wordCategory }: IGameProps) => {
         animal={animal}
         setNextButton={setNextButton}
         nextButton={nextButton}
+        setAnimal={setAnimal}
+        wordCategory={wordCategory}
       />
     </div>
   );

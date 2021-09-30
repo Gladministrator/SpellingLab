@@ -1,6 +1,7 @@
 import { IDivprops } from "../../../types/types";
 import classNames from "classnames/bind";
 import NextQuestionSass from "./NextQuestion.module.scss";
+import { useEffect } from "react";
 
 let cx = classNames.bind(NextQuestionSass);
 
@@ -10,6 +11,8 @@ interface IProps {
   animal: string;
   setNextButton: React.Dispatch<React.SetStateAction<boolean>>;
   nextButton: boolean;
+  setAnimal: React.Dispatch<React.SetStateAction<string>>;
+  wordCategory: string[];
 }
 
 const NextQuestion = ({
@@ -18,9 +21,17 @@ const NextQuestion = ({
   animal,
   setNextButton,
   nextButton,
+  setAnimal,
+  wordCategory,
 }: IProps) => {
   const nextWord = () => {
-    setStateElements(
+    setAnimal(wordCategory[wordCategory.indexOf(animal) + 1]);
+    setincorrectAsnwer(0);
+    setNextButton(false);
+  };
+
+  useEffect(() => {
+    setStateElements(() =>
       animal.split("").map((item, index) => {
         return (
           <div className={cx(NextQuestionSass.box)} key={index}>
@@ -29,13 +40,11 @@ const NextQuestion = ({
         );
       })
     );
-    setincorrectAsnwer(0);
-    setNextButton(false);
-  };
+  }, [animal]);
   return (
     <div>
       {nextButton && <button onClick={nextWord}>Next Word</button>}
-      {!nextButton && <button onClick={nextWord}>SKIP:FEATURE NOT AVAILABLE LOLS</button>}
+      {!nextButton && <button onClick={nextWord}>SKIP</button>}
     </div>
   );
 };
