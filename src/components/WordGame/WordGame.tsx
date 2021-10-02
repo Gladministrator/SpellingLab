@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { IPoints, IDivprops, ICategory } from "../../types/types";
 import WordGameSass from "./WordGame.module.scss";
 import Buttons from "./Buttons/Buttons";
+import WrongAnswer from "./WrongAnswers/WrongAnswers";
 import InputAnswer from "./InputAnswer/InputAnswer";
 import NextQuestion from "./NextQuestion/NextQuestion";
 import classNames from "classnames/bind";
@@ -39,17 +40,22 @@ const WordGame = ({ points, setPoints, players, wordCategory }: IGameProps) => {
     <div className={cx("main-container")}>
       <h1>The Category is {wordCategory[0]}</h1>
       <div className={cx("lettercontainer")}>{stateElements}</div>
-      <Buttons
-        animal={animal}
-        stateElements={stateElements}
-        setStateElements={setStateElements}
-        setincorrectAsnwer={setincorrectAsnwer}
-      />
-      <InputAnswer
-        animal={animal}
-        setStateElements={setStateElements}
-        setincorrectAsnwer={setincorrectAsnwer}
-      />
+      <WrongAnswer />
+      {!nextButton && (
+        <Buttons
+          animal={animal}
+          stateElements={stateElements}
+          setStateElements={setStateElements}
+          setincorrectAsnwer={setincorrectAsnwer}
+        />
+      )}
+      {!nextButton && (
+        <InputAnswer
+          animal={animal}
+          setStateElements={setStateElements}
+          setincorrectAsnwer={setincorrectAsnwer}
+        />
+      )}
       <>Incorrect Tries:{incorrectAsnwer}</>
       <NextQuestion
         setStateElements={setStateElements}
