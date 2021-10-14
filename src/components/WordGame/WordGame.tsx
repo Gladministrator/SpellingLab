@@ -17,7 +17,7 @@ export interface IGameProps {
 }
 
 const WordGame = ({ points, setPoints, players, wordCategory }: IGameProps) => {
-  const [incorrectAsnwer, setincorrectAsnwer] = useState<number>(0);
+  const [incorrectAnswer, setincorrectAnswer] = useState<number>(0);
   const [nextButton, setNextButton] = useState<boolean>(false);
   const [animal, setAnimal] = useState<string>(wordCategory[1]);
   const [stateElements, setStateElements] = useState<IDivprops[]>(
@@ -39,27 +39,32 @@ const WordGame = ({ points, setPoints, players, wordCategory }: IGameProps) => {
   return (
     <div className={cx("main-container")}>
       <h1>The Category is {wordCategory[0]}</h1>
+      {incorrectAnswer > 7 && <h2>The Correct Answer was:</h2>}
       <div className={cx("lettercontainer")}>{stateElements}</div>
-      <WrongAnswer />
+      <WrongAnswer
+        incorrectAnswer={incorrectAnswer}
+        animal={animal}
+        setStateElements={setStateElements}
+      />
       {!nextButton && (
         <Buttons
           animal={animal}
           stateElements={stateElements}
           setStateElements={setStateElements}
-          setincorrectAsnwer={setincorrectAsnwer}
+          setincorrectAnswer={setincorrectAnswer}
         />
       )}
       {!nextButton && (
         <InputAnswer
           animal={animal}
           setStateElements={setStateElements}
-          setincorrectAsnwer={setincorrectAsnwer}
+          setincorrectAnswer={setincorrectAnswer}
         />
       )}
-      <>Incorrect Tries:{incorrectAsnwer}</>
+      <>Incorrect Tries:{incorrectAnswer}</>
       <NextQuestion
         setStateElements={setStateElements}
-        setincorrectAsnwer={setincorrectAsnwer}
+        setincorrectAnswer={setincorrectAnswer}
         animal={animal}
         setNextButton={setNextButton}
         nextButton={nextButton}

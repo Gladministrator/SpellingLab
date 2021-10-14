@@ -16,23 +16,10 @@ function Questions({ setWordCategory, setPlayers, setPoints, players }: IQuestio
   }
   return (
     <div>
-      {players === undefined && (
-        <div>
-          <p>Select the number of players:</p>
-          <div>
-            <button onClick={() => setPlayers(1)}>1</button>
-            <button onClick={() => setPlayers(2)}>2</button>
-            <button onClick={() => setPlayers(3)}>3</button>
-            <button onClick={() => setPlayers(4)}>4</button>
-          </div>
-        </div>
-      )}
-      {players !== undefined && (
-        <div>
-          <p>Select the category</p>
-          <div>{words()}</div>
-        </div>
-      )}
+      <>
+        <p>Select the category</p>
+        <div>{words()}</div>
+      </>
     </div>
   );
 }

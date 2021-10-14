@@ -3,10 +3,10 @@ import { IDivprops } from "../../../types/types";
 interface IProps {
   animal: string;
   setStateElements: React.Dispatch<React.SetStateAction<IDivprops[]>>;
-  setincorrectAsnwer: React.Dispatch<React.SetStateAction<number>>;
+  setincorrectAnswer: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const InputAnswer = ({ animal, setStateElements, setincorrectAsnwer }: IProps): JSX.Element => {
+const InputAnswer = ({ animal, setStateElements, setincorrectAnswer }: IProps): JSX.Element => {
   const valueref = useRef<HTMLInputElement>(null);
 
   function handleClick(): void {
@@ -27,7 +27,7 @@ const InputAnswer = ({ animal, setStateElements, setincorrectAsnwer }: IProps): 
         })
       );
     } else {
-      setincorrectAsnwer((prev) => prev + 1);
+      setincorrectAnswer((prev) => prev + 1);
     }
   }
 

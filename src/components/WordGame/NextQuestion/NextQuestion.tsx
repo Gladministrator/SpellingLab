@@ -7,7 +7,7 @@ let cx = classNames.bind(NextQuestionSass);
 
 interface IProps {
   setStateElements: React.Dispatch<React.SetStateAction<IDivprops[]>>;
-  setincorrectAsnwer: React.Dispatch<React.SetStateAction<number>>;
+  setincorrectAnswer: React.Dispatch<React.SetStateAction<number>>;
   animal: string;
   setNextButton: React.Dispatch<React.SetStateAction<boolean>>;
   nextButton: boolean;
@@ -17,7 +17,7 @@ interface IProps {
 
 const NextQuestion = ({
   setStateElements,
-  setincorrectAsnwer,
+  setincorrectAnswer,
   animal,
   setNextButton,
   nextButton,
@@ -26,7 +26,7 @@ const NextQuestion = ({
 }: IProps) => {
   const nextWord = () => {
     setAnimal(wordCategory[wordCategory.indexOf(animal) + 1]);
-    setincorrectAsnwer(0);
+    setincorrectAnswer(0);
     setNextButton(false);
   };
 
