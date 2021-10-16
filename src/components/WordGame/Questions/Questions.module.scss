@@ -1,0 +1,26 @@
+h3 {
+  color: darkslateblue;
+  font-size: xx-large;
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  > * {
+    background-color: cadetblue;
+    font-size: large;
+    padding: 25px;
+    border: chartreuse 4px solid;
+    &:hover {
+      background-color: cornflowerblue;
+      cursor: pointer;
+    }
+    &:active {
+      box-shadow: 0 8px #666;
+      transform: translatex(7px);
+    }
+  }
+  > :not(:first-child) {
+    margin-top: 25px;
+  }
+}

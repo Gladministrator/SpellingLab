@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { IPoints, IDivprops, ICategory } from "../../types/types";
+import { IPoints, IDivprops, ICategory } from "../../../types/types";
 import WordGameSass from "./WordGame.module.scss";
-import Buttons from "./Buttons/Buttons";
-import WrongAnswer from "./WrongAnswers/WrongAnswers";
-import InputAnswer from "./InputAnswer/InputAnswer";
-import NextQuestion from "./NextQuestion/NextQuestion";
+import Buttons from "../Buttons/Buttons";
+import WrongAnswer from "../WrongAnswers/WrongAnswers";
+import InputAnswer from "../InputAnswer/InputAnswer";
+import NextQuestion from "../NextQuestion/NextQuestion";
 import classNames from "classnames/bind";
 
 let cx = classNames.bind(WordGameSass);
@@ -12,11 +12,10 @@ let cx = classNames.bind(WordGameSass);
 export interface IGameProps {
   points: IPoints;
   setPoints: (param: IPoints) => void;
-  players: number | undefined;
   wordCategory: ICategory;
 }
 
-const WordGame = ({ points, setPoints, players, wordCategory }: IGameProps) => {
+const WordGame = ({ points, setPoints, wordCategory }: IGameProps) => {
   const [incorrectAnswer, setincorrectAnswer] = useState<number>(0);
   const [nextButton, setNextButton] = useState<boolean>(false);
   const [animal, setAnimal] = useState<string>(wordCategory[1]);
