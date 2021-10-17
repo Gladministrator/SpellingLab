@@ -13,6 +13,12 @@ export const categoryAnimals: string[] = [
   "Crocodile",
   "Wolf",
   "Bird",
+  "Skunk",
+  "Mouse",
+  "Cheetah",
+  "Lion",
+  "Zebra",
+  "Panda",
 ];
 
 export const categoryVideoGameCharacter: string[] = [
