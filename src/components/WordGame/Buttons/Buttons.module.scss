@@ -1,0 +1,20 @@
+.alphabet-container {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+  justify-content: center;
+}
+.letter {
+  flex-basis: 20%;
+  height: 25px;
+  border: solid;
+  background-color: cornflowerblue;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  &:hover {
+    background-color: darkolivegreen;
+  }
+}

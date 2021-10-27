@@ -1,4 +1,8 @@
 import { IButtonProps, IDivprops } from "../../../types/types";
+import AlphabetCSS from "./Buttons.module.scss";
+import classNames from "classnames/bind";
+
+let cx = classNames.bind(AlphabetCSS);
 
 const Buttons = ({ animal, stateElements, setStateElements, setincorrectAnswer }: IButtonProps) => {
   const alphabet = [
@@ -51,12 +55,12 @@ const Buttons = ({ animal, stateElements, setStateElements, setincorrectAnswer }
 
   const alphabutton = alphabet.map((item, index) => {
     return (
-      <button onClick={() => handleClick(item)} key={index}>
+      <button className={cx("letter")} onClick={() => handleClick(item)} key={index}>
         {item}
       </button>
     );
   });
-  return <div>{alphabutton}</div>;
+  return <div className={cx("alphabet-container")}>{alphabutton}</div>;
 };
 
 export default Buttons;
