@@ -1,5 +1,10 @@
 import { useRef } from "react";
 import { IDivprops } from "../../../types/types";
+import InputAnswerCSS from "./InputAnswer.module.scss";
+import classNames from "classnames/bind";
+
+let cx = classNames.bind(InputAnswerCSS);
+
 interface IProps {
   animal: string;
   setStateElements: React.Dispatch<React.SetStateAction<IDivprops[]>>;
@@ -32,10 +37,10 @@ const InputAnswer = ({ animal, setStateElements, setincorrectAnswer }: IProps): 
   }
 
   return (
-    <>
-      <input ref={valueref} placeholder={"Enter Answer Here"}></input>
+    <div className={cx("input-container")}>
+      <input className={cx("inputfield")} ref={valueref} placeholder={"Enter Answer Here"}></input>
       <button onClick={handleClick}>Submit Answer</button>
-    </>
+    </div>
   );
 };
 export default InputAnswer;

@@ -33,19 +33,38 @@ const NextQuestion = ({
   useEffect(() => {
     setStateElements(() =>
       animal.split("").map((item, index) => {
-        return (
-          <div className={cx(NextQuestionSass.box)} key={index}>
-            <p className={cx(NextQuestionSass.letters)}>{item}</p>
-          </div>
-        );
+        if (item === " ") {
+          return (
+            <div key={index}>
+              <p> </p>
+            </div>
+          );
+        } else {
+          return (
+            <div className={cx(NextQuestionSass.box)} key={index}>
+              <p className={cx(NextQuestionSass.letters)}></p>
+            </div>
+          );
+        }
       })
     );
   }, [animal]);
   return (
-    <div>
-      {nextButton && <button onClick={nextWord}>Next Word</button>}
-      {!nextButton && <button onClick={nextWord}>SKIP</button>}
-    </div>
+    <>
+      {nextButton && (
+        <button className={cx("next-button")} onClick={nextWord}>
+          Next Word
+        </button>
+      )}
+      {!nextButton && (
+        <button className={cx("skip-button")} onClick={nextWord}>
+          <div className={cx("skip-text-container")}>
+            <div className={cx("text")}>Skip Question</div>
+            <div className={cx("arrow")}>&#10132;</div>
+          </div>
+        </button>
+      )}
+    </>
   );
 };
 

@@ -6,3 +6,38 @@
   width: 30px;
   border-bottom: 2px solid black;
 }
+
+.skip-button {
+  width: 30%;
+  flex-basis: 5%;
+  border: darkslategray;
+  border-style: solid;
+  background-color: chocolate;
+  width: 200px;
+
+  .skip-text-container {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    .text {
+      align-self: center;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .arrow {
+      align-self: center;
+      font-size: 2rem;
+      color: darkturquoise;
+    }
+  }
+  &:hover,
+  &:active {
+    .arrow {
+      margin-left: 20px;
+      color: darkturquoise;
+    }
+    .text {
+      color: aquamarine;
+    }
+  }
+}

@@ -60,7 +60,6 @@ const WordGame = ({ points, setPoints, wordCategory }: IGameProps) => {
           setincorrectAnswer={setincorrectAnswer}
         />
       )}
-      <>Incorrect Tries:{incorrectAnswer}</>
       <NextQuestion
         setStateElements={setStateElements}
         setincorrectAnswer={setincorrectAnswer}
