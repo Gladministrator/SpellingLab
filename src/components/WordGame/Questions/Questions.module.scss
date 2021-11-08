@@ -1,6 +1,12 @@
-h3 {
-  color: darkslateblue;
-  font-size: xx-large;
+@use "../../../styles/styling" as styling;
+
+.category-heading {
+  text-align: center;
+  @include styling.mobile {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    font-size: styling.$mobile-font;
+  }
 }
 
 .categories-container {

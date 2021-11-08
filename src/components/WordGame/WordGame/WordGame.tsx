@@ -19,6 +19,8 @@ const WordGame = ({ points, setPoints, wordCategory }: IGameProps) => {
   const [incorrectAnswer, setincorrectAnswer] = useState<number>(0);
   const [nextButton, setNextButton] = useState<boolean>(false);
   const [animal, setAnimal] = useState<string>(wordCategory[1]);
+  const [change, setChange] = useState(1);
+
   const [stateElements, setStateElements] = useState<IDivprops[]>(
     animal.split("").map((letter, index) => {
       return (
@@ -47,10 +49,13 @@ const WordGame = ({ points, setPoints, wordCategory }: IGameProps) => {
       />
       {!nextButton && (
         <Buttons
+          key={change}
           animal={animal}
           stateElements={stateElements}
           setStateElements={setStateElements}
+          incorrectAnswer={incorrectAnswer}
           setincorrectAnswer={setincorrectAnswer}
+          setChange={setChange}
         />
       )}
       {!nextButton && (

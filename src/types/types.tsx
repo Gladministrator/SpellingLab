@@ -27,5 +27,7 @@ export interface IButtonProps {
   animal: string;
   stateElements: IDivprops[];
   setStateElements: React.Dispatch<React.SetStateAction<IDivprops[]>>;
+  incorrectAnswer: number;
   setincorrectAnswer: React.Dispatch<React.SetStateAction<number>>;
+  setChange: React.Dispatch<React.SetStateAction<number>>;
 }

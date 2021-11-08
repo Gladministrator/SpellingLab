@@ -13,7 +13,7 @@ const MainMenu = () => {
   const [points, setPoints] = useState<IPoints>({ Player1: 0, Player2: 0, Player3: 0 });
   return (
     <div className={cx("MainMenu")}>
-      <h1>Welcome to the spelling game</h1>
+      <h1 className={cx("title-heading")}>Guess The Word</h1>
       <div className={cx("gamecontainer")}>
         {wordCategory === undefined ? (
           <Questions setWordCategory={setWordCategory} setPoints={setPoints} />

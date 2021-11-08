@@ -1,13 +1,18 @@
+@use "../styles/styling" as styling;
+
 .MainMenu {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100%;
-  background-color: burlywood;
+  .title-heading {
+    text-align: center;
+    @include styling.mobile {
+      font-size: styling.$mobile-font;
+      margin-bottom: 0;
+    }
+  }
 }
 .gamecontainer {
   height: 100%;
-  h3 {
-    color: black;
-  }
 }

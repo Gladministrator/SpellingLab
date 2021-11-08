@@ -1,0 +1,7 @@
+@mixin mobile {
+  @media screen and (max-width: 350px) {
+    @content;
+  }
+}
+
+$mobile-font: 1.5rem;

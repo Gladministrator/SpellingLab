@@ -21,7 +21,7 @@ function Questions({ setWordCategory, setPoints }: IQuestionsProps) {
   return (
     <div>
       <>
-        <h3>Select a category</h3>
+        <h1 className={cx("category-heading")}>Select a category</h1>
         <div className={cx("categories-container")}>{words()}</div>
       </>
     </div>
