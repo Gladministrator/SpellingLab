@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/SpellingLab/static/css/main.27d2ac50.chunk.css",
-    "main.js": "/SpellingLab/static/js/main.53920352.chunk.js",
-    "main.js.map": "/SpellingLab/static/js/main.53920352.chunk.js.map",
-    "runtime-main.js": "/SpellingLab/static/js/runtime-main.422419c8.js",
-    "runtime-main.js.map": "/SpellingLab/static/js/runtime-main.422419c8.js.map",
-    "static/js/2.48672b1d.chunk.js": "/SpellingLab/static/js/2.48672b1d.chunk.js",
-    "static/js/2.48672b1d.chunk.js.map": "/SpellingLab/static/js/2.48672b1d.chunk.js.map",
-    "static/js/3.255f52fc.chunk.js": "/SpellingLab/static/js/3.255f52fc.chunk.js",
-    "static/js/3.255f52fc.chunk.js.map": "/SpellingLab/static/js/3.255f52fc.chunk.js.map",
+    "main.css": "/SpellingLab/static/css/main.6394f542.chunk.css",
+    "main.js": "/SpellingLab/static/js/main.2c34a601.chunk.js",
+    "main.js.map": "/SpellingLab/static/js/main.2c34a601.chunk.js.map",
+    "runtime-main.js": "/SpellingLab/static/js/runtime-main.6037421d.js",
+    "runtime-main.js.map": "/SpellingLab/static/js/runtime-main.6037421d.js.map",
+    "static/js/2.68887cbf.chunk.js": "/SpellingLab/static/js/2.68887cbf.chunk.js",
+    "static/js/2.68887cbf.chunk.js.map": "/SpellingLab/static/js/2.68887cbf.chunk.js.map",
+    "static/js/3.fabd439a.chunk.js": "/SpellingLab/static/js/3.fabd439a.chunk.js",
+    "static/js/3.fabd439a.chunk.js.map": "/SpellingLab/static/js/3.fabd439a.chunk.js.map",
     "index.html": "/SpellingLab/index.html",
-    "static/css/main.27d2ac50.chunk.css.map": "/SpellingLab/static/css/main.27d2ac50.chunk.css.map",
-    "static/js/2.48672b1d.chunk.js.LICENSE.txt": "/SpellingLab/static/js/2.48672b1d.chunk.js.LICENSE.txt"
+    "static/css/main.6394f542.chunk.css.map": "/SpellingLab/static/css/main.6394f542.chunk.css.map",
+    "static/js/2.68887cbf.chunk.js.LICENSE.txt": "/SpellingLab/static/js/2.68887cbf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.422419c8.js",
-    "static/js/2.48672b1d.chunk.js",
-    "static/css/main.27d2ac50.chunk.css",
-    "static/js/main.53920352.chunk.js"
+    "static/js/runtime-main.6037421d.js",
+    "static/js/2.68887cbf.chunk.js",
+    "static/css/main.6394f542.chunk.css",
+    "static/js/main.2c34a601.chunk.js"
   ]
 }
