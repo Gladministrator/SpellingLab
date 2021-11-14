@@ -14,13 +14,13 @@ interface IProps {
 const InputAnswer = ({ animal, setStateElements, setincorrectAnswer }: IProps): JSX.Element => {
   const valueref = useRef<HTMLInputElement>(null);
 
-  function handleClick(): void {
+  const handleClick = (): void => {
     if (valueref.current) {
       valueref.current.value !== "" ? handleEntry() : alert("Please enter a value");
     }
-  }
+  };
 
-  function handleEntry() {
+  const handleEntry = (): void => {
     if (animal.toLowerCase() === valueref.current?.value.toLowerCase()) {
       setStateElements(
         animal.split("").map((letter, index) => {
@@ -34,12 +34,14 @@ const InputAnswer = ({ animal, setStateElements, setincorrectAnswer }: IProps): 
     } else {
       setincorrectAnswer((prev) => prev + 1);
     }
-  }
+  };
 
   return (
     <div className={cx("input-container")}>
       <input className={cx("inputfield")} ref={valueref} placeholder={"Enter Answer Here"}></input>
-      <button onClick={handleClick}>Submit Answer</button>
+      <button className={cx("submit-button")} onClick={handleClick}>
+        Submit Answer
+      </button>
     </div>
   );
 };

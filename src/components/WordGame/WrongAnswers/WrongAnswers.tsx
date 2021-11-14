@@ -8,22 +8,22 @@ interface IProps {
   incorrectAnswer: number;
   animal: string;
   setStateElements: React.Dispatch<React.SetStateAction<IDivprops[]>>;
+  setText: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const WrongAnswer = ({ incorrectAnswer, animal, setStateElements }: IProps) => {
-  useEffect(
-    (): void =>
-      setStateElements(
-        animal.split("").map((letter, index) => {
-          return (
-            <div key={index}>
-              <p>{letter}</p>
-            </div>
-          );
-        })
-      ),
-    [incorrectAnswer > 7]
-  );
+const WrongAnswer = ({ incorrectAnswer, animal, setStateElements, setText }: IProps) => {
+  useEffect((): void => {
+    setStateElements(
+      animal.split("").map((letter, index) => {
+        return (
+          <div key={index}>
+            <p>{letter}</p>
+          </div>
+        );
+      })
+    );
+    setText("Wrong Answer");
+  }, [incorrectAnswer > 6]);
   return (
     <div className={cx("xmarkcontainer")}>
       <div className={cx({ xmarkpending: incorrectAnswer < 1 })}>&#10060;</div>

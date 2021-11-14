@@ -1,6 +1,3 @@
-import { type } from "os";
-import { HTMLProps } from "react";
-
 export interface IDivprops extends JSX.Element {
   props: React.HTMLProps<HTMLDivElement>;
 }
@@ -12,15 +9,9 @@ export type ICategories = {
   "Game Characters": string[];
 };
 
-export interface IPoints {
-  Player1: number;
-  Player2: number;
-  Player3: number;
-}
-
 export interface IQuestionsProps {
   setWordCategory: (param: ICategory) => void;
-  setPoints: (param: IPoints) => void;
+  setText: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export interface IButtonProps {

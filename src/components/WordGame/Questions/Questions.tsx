@@ -6,7 +6,7 @@ import classNames from "classnames/bind";
 
 let cx = classNames.bind(QuestionsCSS);
 
-function Questions({ setWordCategory, setPoints }: IQuestionsProps) {
+function Questions({ setWordCategory, setText }: IQuestionsProps) {
   function words() {
     let array: JSX.Element[] = [];
     for (let items in categories) {

@@ -17,14 +17,7 @@
     font-size: large;
     padding: 25px;
     border: chartreuse 4px solid;
-    &:hover {
-      background-color: cornflowerblue;
-      cursor: pointer;
-    }
-    &:active {
-      box-shadow: 0 8px #666;
-      transform: translatex(7px);
-    }
+    @include styling.button-active;
   }
   > :not(:first-child) {
     margin-top: 25px;

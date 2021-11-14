@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { IPoints, IDivprops, ICategory } from "../../../types/types";
+import { IDivprops, ICategory } from "../../../types/types";
 import WordGameSass from "./WordGame.module.scss";
 import Buttons from "../Buttons/Buttons";
 import WrongAnswer from "../WrongAnswers/WrongAnswers";
@@ -10,12 +10,12 @@ import classNames from "classnames/bind";
 let cx = classNames.bind(WordGameSass);
 
 export interface IGameProps {
-  points: IPoints;
-  setPoints: (param: IPoints) => void;
+  text: string;
+  setText: React.Dispatch<React.SetStateAction<string>>;
   wordCategory: ICategory;
 }
 
-const WordGame = ({ points, setPoints, wordCategory }: IGameProps) => {
+const WordGame = ({ text, setText, wordCategory }: IGameProps) => {
   const [incorrectAnswer, setincorrectAnswer] = useState<number>(0);
   const [nextButton, setNextButton] = useState<boolean>(false);
   const [animal, setAnimal] = useState<string>(wordCategory[1]);
@@ -40,12 +40,18 @@ const WordGame = ({ points, setPoints, wordCategory }: IGameProps) => {
   return (
     <div className={cx("main-container")}>
       <h1>The Category is {wordCategory[0]}</h1>
-      {incorrectAnswer > 7 && <h2>The Correct Answer was:</h2>}
+      {incorrectAnswer > 6 && (
+        <h2>
+          <div className={cx("text-wrong")}>{text}</div>
+          <div>The answer was:</div>
+        </h2>
+      )}
       <div className={cx("lettercontainer")}>{stateElements}</div>
       <WrongAnswer
         incorrectAnswer={incorrectAnswer}
         animal={animal}
         setStateElements={setStateElements}
+        setText={setText}
       />
       {!nextButton && (
         <Buttons

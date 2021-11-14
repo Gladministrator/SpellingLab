@@ -1,3 +1,5 @@
+@use "../../../styles/styling" as styling;
+
 .input-container {
   display: flex;
   column-gap: 10px;
@@ -8,5 +10,10 @@
     width: 30%;
     min-width: fit-content;
     border: 3px solid black;
+  }
+  .submit-button {
+    background-color: orange;
+    border: solid 2px black;
+    @include styling.button-active;
   }
 }

@@ -5,3 +5,13 @@
 }
 
 $mobile-font: 1.5rem;
+
+@mixin button-active {
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    box-shadow: 8px 8px #666;
+    transform: translatex(7px);
+  }
+}
