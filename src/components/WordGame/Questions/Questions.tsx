@@ -11,7 +11,12 @@ function Questions({ setWordCategory, setText }: IQuestionsProps) {
     let array: JSX.Element[] = [];
     for (let items in categories) {
       array.push(
-        <button onClick={() => setWordCategory(categories[items as keyof ICategories])} key={items}>
+        <button
+          onClick={() => {
+            setWordCategory(categories[items as keyof ICategories]);
+            setText(`The Category is ${items}`);
+          }}
+          key={items}>
           {items}
         </button>
       );

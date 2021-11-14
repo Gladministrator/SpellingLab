@@ -22,7 +22,7 @@ const WrongAnswer = ({ incorrectAnswer, animal, setStateElements, setText }: IPr
         );
       })
     );
-    setText("Wrong Answer");
+    incorrectAnswer > 6 && setText("Wrong Answer");
   }, [incorrectAnswer > 6]);
   return (
     <div className={cx("xmarkcontainer")}>

@@ -13,6 +13,7 @@ interface IProps {
   nextButton: boolean;
   setAnimal: React.Dispatch<React.SetStateAction<string>>;
   wordCategory: string[];
+  setText: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const NextQuestion = ({
@@ -23,11 +24,13 @@ const NextQuestion = ({
   nextButton,
   setAnimal,
   wordCategory,
+  setText,
 }: IProps) => {
   const nextWord = () => {
     setAnimal(wordCategory[wordCategory.indexOf(animal) + 1]);
     setincorrectAnswer(0);
     setNextButton(false);
+    setText(`The category is ${wordCategory[0]}`);
   };
 
   useEffect(() => {

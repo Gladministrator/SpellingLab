@@ -39,13 +39,7 @@ const WordGame = ({ text, setText, wordCategory }: IGameProps) => {
 
   return (
     <div className={cx("main-container")}>
-      <h1>The Category is {wordCategory[0]}</h1>
-      {incorrectAnswer > 6 && (
-        <h2>
-          <div className={cx("text-wrong")}>{text}</div>
-          <div>The answer was:</div>
-        </h2>
-      )}
+      <h1>{text}</h1>
       <div className={cx("lettercontainer")}>{stateElements}</div>
       <WrongAnswer
         incorrectAnswer={incorrectAnswer}
@@ -79,6 +73,7 @@ const WordGame = ({ text, setText, wordCategory }: IGameProps) => {
         nextButton={nextButton}
         setAnimal={setAnimal}
         wordCategory={wordCategory}
+        setText={setText}
       />
     </div>
   );
