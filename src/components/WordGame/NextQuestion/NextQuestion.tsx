@@ -13,7 +13,7 @@ interface IProps {
   nextButton: boolean;
   setAnimal: React.Dispatch<React.SetStateAction<string>>;
   wordCategory: string[];
-  setText: React.Dispatch<React.SetStateAction<string>>;
+  setText: React.Dispatch<React.SetStateAction<JSX.Element>>;
 }
 
 const NextQuestion = ({
@@ -30,7 +30,22 @@ const NextQuestion = ({
     setAnimal(wordCategory[wordCategory.indexOf(animal) + 1]);
     setincorrectAnswer(0);
     setNextButton(false);
-    setText(`The category is ${wordCategory[0]}`);
+    setText(<h1>The Category is {wordCategory[0]}</h1>);
+  };
+
+  const skipWord = () => {
+    setincorrectAnswer(7);
+    setNextButton(true);
+    setText(<h1>The Answer Was:</h1>);
+    setStateElements(
+      animal.split("").map((letter, index) => {
+        return (
+          <div key={index}>
+            <p>{letter}</p>
+          </div>
+        );
+      })
+    );
   };
 
   useEffect(() => {
@@ -60,7 +75,7 @@ const NextQuestion = ({
         </button>
       )}
       {!nextButton && (
-        <button className={cx("skip-button")} onClick={nextWord}>
+        <button className={cx("skip-button")} onClick={skipWord}>
           <div className={cx("skip-text-container")}>
             <div className={cx("text")}>Skip Question</div>
             <div className={cx("arrow")}>&#10132;</div>

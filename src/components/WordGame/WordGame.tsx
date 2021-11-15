@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { IDivprops, ICategory } from "../../../types/types";
+import { IDivprops, ICategory } from "../../types/types";
 import WordGameSass from "./WordGame.module.scss";
-import Buttons from "../Buttons/Buttons";
-import WrongAnswer from "../WrongAnswers/WrongAnswers";
-import InputAnswer from "../InputAnswer/InputAnswer";
-import NextQuestion from "../NextQuestion/NextQuestion";
+import Buttons from "./Buttons/Buttons";
+import WrongAnswer from "./WrongAnswers/WrongAnswers";
+import InputAnswer from "./InputAnswer/InputAnswer";
+import NextQuestion from "./NextQuestion/NextQuestion";
 import classNames from "classnames/bind";
 
 let cx = classNames.bind(WordGameSass);
 
 export interface IGameProps {
-  text: string;
-  setText: React.Dispatch<React.SetStateAction<string>>;
+  text: JSX.Element;
+  setText: React.Dispatch<React.SetStateAction<JSX.Element>>;
   wordCategory: ICategory;
 }
 
@@ -34,19 +34,42 @@ const WordGame = ({ text, setText, wordCategory }: IGameProps) => {
   useEffect(() => {
     if (stateElements.every((div) => div.props.className === undefined)) {
       setNextButton(true);
+
+      incorrectAnswer < 7 &&
+        setText(
+          <>
+            <h1 className={cx("correct-answer")}>Good Job!</h1>
+            <div className={cx("firework")} id="firework1">
+              <div className={cx("firework-element")}></div>
+              <div className={cx("firework-element")}></div>
+              <div className={cx("firework-element")}></div>
+              <div className={cx("firework-element")}></div>
+              <div className={cx("firework-element")}></div>
+              <div className={cx("firework-element")}></div>
+              <div className={cx("firework-element")}></div>
+              <div className={cx("firework-element")}></div>
+              <div className={cx("firework-element")}></div>
+              <div className={cx("firework-element")}></div>
+              <div className={cx("firework-element")}></div>
+              <div className={cx("firework-element")}></div>
+            </div>
+          </>
+        );
     }
   }, [stateElements]);
 
   return (
     <div className={cx("main-container")}>
-      <h1>{text}</h1>
+      <>{text}</>
       <div className={cx("lettercontainer")}>{stateElements}</div>
-      <WrongAnswer
-        incorrectAnswer={incorrectAnswer}
-        animal={animal}
-        setStateElements={setStateElements}
-        setText={setText}
-      />
+      {!nextButton && (
+        <WrongAnswer
+          incorrectAnswer={incorrectAnswer}
+          animal={animal}
+          setStateElements={setStateElements}
+          setText={setText}
+        />
+      )}
       {!nextButton && (
         <Buttons
           key={change}

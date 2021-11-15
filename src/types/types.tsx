@@ -11,7 +11,7 @@ export type ICategories = {
 
 export interface IQuestionsProps {
   setWordCategory: (param: ICategory) => void;
-  setText: React.Dispatch<React.SetStateAction<string>>;
+  setText: React.Dispatch<React.SetStateAction<JSX.Element>>;
 }
 
 export interface IButtonProps {

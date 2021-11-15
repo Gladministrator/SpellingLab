@@ -1,5 +1,5 @@
 import Questions from "../components/WordGame/Questions/Questions";
-import WordGame from "./WordGame/WordGame/WordGame";
+import WordGame from "./WordGame/WordGame";
 import { useState } from "react";
 import { ICategory } from "../types/types";
 import classNames from "classnames/bind";
@@ -9,7 +9,7 @@ let cx = classNames.bind(MainMenuSass);
 
 const MainMenu = () => {
   const [wordCategory, setWordCategory] = useState<ICategory>();
-  const [text, setText] = useState<string>("");
+  const [text, setText] = useState<JSX.Element>(<></>);
   return (
     <div className={cx("MainMenu")}>
       <h1 className={cx("title-heading")}>Guess The Word</h1>

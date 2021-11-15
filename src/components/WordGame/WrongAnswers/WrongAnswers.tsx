@@ -8,7 +8,7 @@ interface IProps {
   incorrectAnswer: number;
   animal: string;
   setStateElements: React.Dispatch<React.SetStateAction<IDivprops[]>>;
-  setText: React.Dispatch<React.SetStateAction<string>>;
+  setText: React.Dispatch<React.SetStateAction<JSX.Element>>;
 }
 
 const WrongAnswer = ({ incorrectAnswer, animal, setStateElements, setText }: IProps) => {
@@ -22,7 +22,7 @@ const WrongAnswer = ({ incorrectAnswer, animal, setStateElements, setText }: IPr
         );
       })
     );
-    incorrectAnswer > 6 && setText("Wrong Answer");
+    incorrectAnswer > 6 && setText(<h1 className={cx("wrong-answer")}>Wrong Answer!</h1>);
   }, [incorrectAnswer > 6]);
   return (
     <div className={cx("xmarkcontainer")}>
