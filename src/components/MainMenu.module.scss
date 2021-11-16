@@ -11,6 +11,10 @@
       font-size: styling.$mobile-font;
       margin-bottom: 0;
     }
+    @include styling.tablet {
+      font-size: styling.$tablet-font;
+      margin-bottom: 0;
+    }
   }
 }
 .gamecontainer {

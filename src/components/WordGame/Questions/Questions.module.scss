@@ -7,6 +7,10 @@
     margin-top: 25px;
     font-size: styling.$mobile-font;
   }
+  @include styling.tablet {
+    font-size: styling.$tablet-font;
+    margin-bottom: 0;
+  }
 }
 
 .categories-container {

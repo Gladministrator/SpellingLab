@@ -1,10 +1,24 @@
 @mixin mobile {
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 550px) {
     @content;
   }
 }
 
 $mobile-font: 1.5rem;
+
+@mixin tablet {
+  @media screen and (min-width: 800px) {
+    @content;
+  }
+}
+
+$tablet-font: 2rem;
+
+@mixin full {
+  @media screen and (min-width: 801px) {
+    @content;
+  }
+}
 
 @mixin button-active {
   &:hover {

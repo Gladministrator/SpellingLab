@@ -13,6 +13,10 @@
     @include styling.mobile {
       font-size: styling.$mobile-font;
     }
+    @include styling.tablet {
+      font-size: styling.$tablet-font;
+      margin-bottom: 0;
+    }
   }
 }
 
