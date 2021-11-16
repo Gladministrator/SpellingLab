@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/SpellingLab/static/css/main.12c02510.chunk.css",
+    "main.css": "/SpellingLab/static/css/main.3035ad45.chunk.css",
     "main.js": "/SpellingLab/static/js/main.870ad944.chunk.js",
     "main.js.map": "/SpellingLab/static/js/main.870ad944.chunk.js.map",
     "runtime-main.js": "/SpellingLab/static/js/runtime-main.6037421d.js",
@@ -10,13 +10,13 @@
     "static/js/3.fabd439a.chunk.js": "/SpellingLab/static/js/3.fabd439a.chunk.js",
     "static/js/3.fabd439a.chunk.js.map": "/SpellingLab/static/js/3.fabd439a.chunk.js.map",
     "index.html": "/SpellingLab/index.html",
-    "static/css/main.12c02510.chunk.css.map": "/SpellingLab/static/css/main.12c02510.chunk.css.map",
+    "static/css/main.3035ad45.chunk.css.map": "/SpellingLab/static/css/main.3035ad45.chunk.css.map",
     "static/js/2.68887cbf.chunk.js.LICENSE.txt": "/SpellingLab/static/js/2.68887cbf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6037421d.js",
     "static/js/2.68887cbf.chunk.js",
-    "static/css/main.12c02510.chunk.css",
+    "static/css/main.3035ad45.chunk.css",
     "static/js/main.870ad944.chunk.js"
   ]
 }
