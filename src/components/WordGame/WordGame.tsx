@@ -13,14 +13,14 @@ export interface IGameProps {
   text: JSX.Element;
   setText: React.Dispatch<React.SetStateAction<JSX.Element>>;
   wordCategory: ICategory;
+  setWordCategory: React.Dispatch<React.SetStateAction<ICategory>>;
 }
 
-const WordGame = ({ text, setText, wordCategory }: IGameProps) => {
+const WordGame = ({ text, setText, wordCategory, setWordCategory }: IGameProps) => {
   const [incorrectAnswer, setincorrectAnswer] = useState<number>(0);
   const [nextButton, setNextButton] = useState<boolean>(false);
   const [animal, setAnimal] = useState<string>(wordCategory[1]);
   const [change, setChange] = useState(1);
-
   const [stateElements, setStateElements] = useState<IDivprops[]>(
     animal.split("").map((letter, index) => {
       return (
@@ -96,6 +96,7 @@ const WordGame = ({ text, setText, wordCategory }: IGameProps) => {
         nextButton={nextButton}
         setAnimal={setAnimal}
         wordCategory={wordCategory}
+        setWordCategory={setWordCategory}
         setText={setText}
       />
     </div>

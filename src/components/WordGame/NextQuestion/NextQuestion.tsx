@@ -1,4 +1,4 @@
-import { IDivprops } from "../../../types/types";
+import { IDivprops, ICategory } from "../../../types/types";
 import classNames from "classnames/bind";
 import NextQuestionSass from "./NextQuestion.module.scss";
 import { useEffect } from "react";
@@ -12,7 +12,8 @@ interface IProps {
   setNextButton: React.Dispatch<React.SetStateAction<boolean>>;
   nextButton: boolean;
   setAnimal: React.Dispatch<React.SetStateAction<string>>;
-  wordCategory: string[];
+  wordCategory: ICategory;
+  setWordCategory: React.Dispatch<React.SetStateAction<ICategory>>;
   setText: React.Dispatch<React.SetStateAction<JSX.Element>>;
 }
 
@@ -24,13 +25,18 @@ const NextQuestion = ({
   nextButton,
   setAnimal,
   wordCategory,
+  setWordCategory,
   setText,
 }: IProps) => {
   const nextWord = () => {
-    setAnimal(wordCategory[wordCategory.indexOf(animal) + 1]);
-    setincorrectAnswer(0);
-    setNextButton(false);
-    setText(<h1>The Category is {wordCategory[0]}</h1>);
+    if (wordCategory[wordCategory.indexOf(animal) + 1]) {
+      setAnimal(wordCategory[wordCategory.indexOf(animal) + 1]);
+      setincorrectAnswer(0);
+      setNextButton(false);
+      setText(<h1>The Category is {wordCategory[0]}</h1>);
+    } else {
+      setText(<h1>End of the Game! Click below to return to the menu</h1>);
+    }
   };
 
   const skipWord = () => {
@@ -46,6 +52,10 @@ const NextQuestion = ({
         );
       })
     );
+  };
+
+  const returnMainMenu = () => {
+    setWordCategory("None");
   };
 
   useEffect(() => {
@@ -82,6 +92,9 @@ const NextQuestion = ({
           </div>
         </button>
       )}
+      <button className={cx("return-main")} onClick={returnMainMenu}>
+        Return to Main Menu
+      </button>
     </>
   );
 };

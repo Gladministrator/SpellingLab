@@ -2,7 +2,7 @@ export interface IDivprops extends JSX.Element {
   props: React.HTMLProps<HTMLDivElement>;
 }
 
-export type ICategory = string[];
+export type ICategory = string[] | "None";
 
 export type ICategories = {
   Animals: string[];

@@ -8,16 +8,21 @@ import MainMenuSass from "./MainMenu.module.scss";
 let cx = classNames.bind(MainMenuSass);
 
 const MainMenu = () => {
-  const [wordCategory, setWordCategory] = useState<ICategory>();
+  const [wordCategory, setWordCategory] = useState<ICategory>("None");
   const [text, setText] = useState<JSX.Element>(<></>);
   return (
     <div className={cx("MainMenu")}>
       <h1 className={cx("title-heading")}>Guess The Word</h1>
       <div className={cx("gamecontainer")}>
-        {wordCategory === undefined ? (
+        {wordCategory === "None" ? (
           <Questions setWordCategory={setWordCategory} setText={setText} />
         ) : (
-          <WordGame text={text} setText={setText} wordCategory={wordCategory} />
+          <WordGame
+            text={text}
+            setText={setText}
+            wordCategory={wordCategory}
+            setWordCategory={setWordCategory}
+          />
         )}
       </div>
     </div>
