@@ -12,7 +12,7 @@ const MainMenu = () => {
   const [text, setText] = useState<JSX.Element>(<></>);
   return (
     <div className={cx("MainMenu")}>
-      <h1 className={cx("title-heading")}>Guess The Word</h1>
+      <h1 className={cx("title-heading")}>Guess The Word!</h1>
       <div className={cx("gamecontainer")}>
         {wordCategory === "None" ? (
           <Questions setWordCategory={setWordCategory} setText={setText} />

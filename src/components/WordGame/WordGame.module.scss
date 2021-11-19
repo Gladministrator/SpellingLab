@@ -5,16 +5,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 35px;
+  row-gap: 10px;
+  @include styling.full {
+    row-gap: 25px;
+  }
   h1 {
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 0;
     text-align: center;
     @include styling.mobile {
       font-size: styling.$mobile-font;
+      margin-top: 5px;
     }
     @include styling.tablet {
       font-size: styling.$tablet-font;
+      margin-top: 5px;
       margin-bottom: 0;
     }
   }
@@ -52,7 +57,7 @@
 .firework {
   position: absolute;
   left: 50%;
-  top: 40%;
+  top: 50%;
   transform: scale(1);
 }
 .firework-element {
@@ -64,41 +69,14 @@
   transform-origin: 50% 100%;
   overflow: hidden;
 }
-.firework-element:nth-child(1) {
-  transform: rotate(0deg) translateY(-15px);
-}
-.firework-element:nth-child(2) {
-  transform: rotate(30deg) translateY(-15px);
-}
-.firework-element:nth-child(3) {
-  transform: rotate(60deg) translateY(-15px);
-}
-.firework-element:nth-child(4) {
-  transform: rotate(90deg) translateY(-15px);
-}
-.firework-element:nth-child(5) {
-  transform: rotate(120deg) translateY(-15px);
-}
-.firework-element:nth-child(6) {
-  transform: rotate(150deg) translateY(-15px);
-}
-.firework-element:nth-child(7) {
-  transform: rotate(180deg) translateY(-15px);
-}
-.firework-element:nth-child(8) {
-  transform: rotate(210deg) translateY(-15px);
-}
-.firework-element:nth-child(9) {
-  transform: rotate(240deg) translateY(-15px);
-}
-.firework-element:nth-child(10) {
-  transform: rotate(270deg) translateY(-15px);
-}
-.firework-element:nth-child(11) {
-  transform: rotate(300deg) translateY(-15px);
-}
-.firework-element:nth-child(12) {
-  transform: rotate(330deg) translateY(-15px);
+
+$degree: 0;
+
+@for $i from 1 through 12 {
+  .firework-element:nth-child(#{$i}) {
+    transform: rotate(#{$degree}deg) translateY(-15px);
+  }
+  $degree: $degree + 30;
 }
 
 .firework-element::before {
@@ -110,6 +88,7 @@
   height: 25px;
   background-color: green;
 }
+
 @keyframes fireworkanimation {
   0% {
     top: 100%;

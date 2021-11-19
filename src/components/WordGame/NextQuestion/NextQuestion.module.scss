@@ -46,6 +46,9 @@
   border: solid 2px darkslategray;
   flex-basis: 5%;
   font-size: large;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .return-main {
@@ -53,4 +56,7 @@
   width: 200px;
   border: solid 2px darkslategray;
   font-size: large;
+  &:hover {
+    cursor: pointer;
+  }
 }

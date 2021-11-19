@@ -7,7 +7,7 @@
 $mobile-font: 1.5rem;
 
 @mixin tablet {
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 551px) {
     @content;
   }
 }
@@ -15,7 +15,7 @@ $mobile-font: 1.5rem;
 $tablet-font: 2rem;
 
 @mixin full {
-  @media screen and (min-width: 801px) {
+  @media screen and (min-width: 1001px) {
     @content;
   }
 }

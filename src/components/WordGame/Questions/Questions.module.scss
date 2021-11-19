@@ -3,19 +3,17 @@
 .category-heading {
   text-align: center;
   @include styling.mobile {
-    margin-bottom: 25px;
-    margin-top: 25px;
     font-size: styling.$mobile-font;
   }
   @include styling.tablet {
     font-size: styling.$tablet-font;
-    margin-bottom: 0;
   }
 }
 
 .categories-container {
   display: flex;
   flex-direction: column;
+  row-gap: 15px;
   > * {
     background-color: cadetblue;
     font-size: large;

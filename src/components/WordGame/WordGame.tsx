@@ -31,6 +31,13 @@ const WordGame = ({ text, setText, wordCategory, setWordCategory }: IGameProps) 
     })
   );
 
+  let x: number = 0;
+  const array: JSX.Element[] = [];
+  while (x < 12) {
+    array.push(<div className={cx("firework-element")}></div>);
+    x++;
+  }
+
   useEffect(() => {
     if (stateElements.every((div) => div.props.className === undefined)) {
       setNextButton(true);
@@ -40,18 +47,7 @@ const WordGame = ({ text, setText, wordCategory, setWordCategory }: IGameProps) 
           <>
             <h1 className={cx("correct-answer")}>Good Job!</h1>
             <div className={cx("firework")} id="firework1">
-              <div className={cx("firework-element")}></div>
-              <div className={cx("firework-element")}></div>
-              <div className={cx("firework-element")}></div>
-              <div className={cx("firework-element")}></div>
-              <div className={cx("firework-element")}></div>
-              <div className={cx("firework-element")}></div>
-              <div className={cx("firework-element")}></div>
-              <div className={cx("firework-element")}></div>
-              <div className={cx("firework-element")}></div>
-              <div className={cx("firework-element")}></div>
-              <div className={cx("firework-element")}></div>
-              <div className={cx("firework-element")}></div>
+              {array}
             </div>
           </>
         );
