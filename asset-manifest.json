@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/SpellingLab/static/css/main.b7eae351.chunk.css",
-    "main.js": "/SpellingLab/static/js/main.caade76e.chunk.js",
-    "main.js.map": "/SpellingLab/static/js/main.caade76e.chunk.js.map",
+    "main.js": "/SpellingLab/static/js/main.179ba95d.chunk.js",
+    "main.js.map": "/SpellingLab/static/js/main.179ba95d.chunk.js.map",
     "runtime-main.js": "/SpellingLab/static/js/runtime-main.6037421d.js",
     "runtime-main.js.map": "/SpellingLab/static/js/runtime-main.6037421d.js.map",
     "static/js/2.68887cbf.chunk.js": "/SpellingLab/static/js/2.68887cbf.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.6037421d.js",
     "static/js/2.68887cbf.chunk.js",
     "static/css/main.b7eae351.chunk.css",
-    "static/js/main.caade76e.chunk.js"
+    "static/js/main.179ba95d.chunk.js"
   ]
 }
