@@ -1,6 +1,7 @@
 interface ICategories {
   Animals: string[];
   "Game Characters": string[];
+  Sports: string[];
 }
 
 export const categoryAnimals: string[] = [
@@ -33,7 +34,24 @@ export const categoryVideoGameCharacter: string[] = [
   "Samus",
 ];
 
+export const sports: string[] = [
+  "Sports",
+  "Soccer",
+  "Basketball",
+  "Tennis",
+  "Baseball",
+  "Golf",
+  "Hockey",
+  "Cricket",
+  "Football",
+  "Badminton",
+  "Wrestling",
+  "Volleyball",
+  "Boxing",
+];
+
 export const categories: ICategories = {
   Animals: categoryAnimals,
   "Game Characters": categoryVideoGameCharacter,
+  Sports: sports,
 };
