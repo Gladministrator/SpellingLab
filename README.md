@@ -1,23 +1,32 @@
-# Getting Started with Create React App
+# The Word Guessing Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created using React, SASS, and TypeScript
 
-## Available Scripts
+## Project Goals
 
-In the project directory, you can run:
+- Create a game where people can guess the the hidden word
+- Practice and learn more TypeScript
+- Break components into separate files and keep code structured/organized
+- Continue to improve CSS skills by using classnames, css modules
+- Keep accessibility in mind
+- Responsive and a variety of screen sizes
 
-### `npm start`
+### Project Information
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This project is another game-like application in which anyone can play by guessing the hidden word. The game allows you to spell 
+out the word in the input box or click on buttons representing the alphabet which will either reveal the character or give you a strike.
+The game allows you to first select a category and has the option of going back to the category select screen if you want to change the 
+category. This project had a lot of JavaScript code due to the number of interactions possible.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Adding words and new categories is fairly straightforward with how the components are setup. It ensures future updates are feasible.
 
-### `npm test`
+### Lessons Learned
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I think the biggest lesson I learned here was to use a state management tool in the future like Context API or Redux due to how each
+component can change the state.
+
+I did struggle at the start with TypeScript but got more familiar with it as the project went on. I've decided to continue to use
+TypeScript in any future project as it's quite helpful and widely used.
 
 ### `npm run build`
 
