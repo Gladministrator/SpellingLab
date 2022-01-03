@@ -15,8 +15,11 @@ This project was created using React, SASS, and TypeScript
 
 This project is another game-like application in which anyone can play by guessing the hidden word. The game allows you to spell 
 out the word in the input box or click on buttons representing the alphabet which will either reveal the character or give you a strike.
+
 The game allows you to first select a category and has the option of going back to the category select screen if you want to change the 
 category. This project had a lot of JavaScript code due to the number of interactions possible.
+
+I also used a breakpoints file to make updating the styles on different screen sizes easier. 
 
 Adding words and new categories is fairly straightforward with how the components are setup. It ensures future updates are feasible.
 
@@ -25,8 +28,8 @@ Adding words and new categories is fairly straightforward with how the component
 I think the biggest lesson I learned here was to use a state management tool in the future like Context API or Redux due to how each
 component can change the state.
 
-I did struggle at the start with TypeScript but got more familiar with it as the project went on. I've decided to continue to use
-TypeScript in any future project as it's quite helpful and widely used.
+I have also decided that TypeScript is going to be used for future projects since it helps catch errors and makes it easy to know which 
+properties an object has.
 
 Another thing I realized was the styling could do with some improvement. There are very few icons/images so it's something I'll be keeping
 in mind for future projects.
