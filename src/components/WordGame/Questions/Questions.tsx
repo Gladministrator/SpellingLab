@@ -14,7 +14,7 @@ function Questions({ setWordCategory, setText }: IQuestionsProps) {
         <button
           onClick={() => {
             setWordCategory(categories[items as keyof ICategories]);
-            setText(<h1>The Category is {items}</h1>);
+            setText(<h1>Category: {items}</h1>);
           }}
           key={items}>
           {items}

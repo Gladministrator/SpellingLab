@@ -33,7 +33,7 @@ const NextQuestion = ({
       setAnimal(wordCategory[wordCategory.indexOf(animal) + 1]);
       setincorrectAnswer(0);
       setNextButton(false);
-      setText(<h1>The Category is {wordCategory[0]}</h1>);
+      setText(<h1>Category: {wordCategory[0]}</h1>);
     } else {
       setText(<h1>End of the Game! Click below to return to the menu</h1>);
     }

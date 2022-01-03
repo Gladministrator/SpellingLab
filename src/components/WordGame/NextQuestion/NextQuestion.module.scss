@@ -1,9 +1,15 @@
+@use "../../../styles/styling" as styling;
+
 .letters {
   opacity: 0;
 }
 
 .box {
-  width: 30px;
+  width: 20px;
+
+  @include styling.mobile {
+    width: 25px;
+  }
   border-bottom: 2px solid black;
 }
 
